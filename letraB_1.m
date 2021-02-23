@@ -1,4 +1,4 @@
-sys t;
+syms t;
 
 wn = pi / 10;
 
@@ -17,7 +17,11 @@ t0 = tic;
 
 contf = toc(cont0);
 
-Rd = S03;
+Rd = SO3;
 
 Rd = Rd.R();
+
+Td = SE3(Rd, double(pds(contf)));
+
+rpyd = rotm2eul(Rd);
 
